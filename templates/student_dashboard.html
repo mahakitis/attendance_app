@@ -1,0 +1,54 @@
+<!-- student_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, Student!</h1>
+        <p>This is your student dashboard.</p>
+
+        <button id="markAttendance">Mark Attendance</button>
+
+        <script>
+            document.getElementById('markAttendance').addEventListener('click', function() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        var lat = position.coords.latitude;
+                        var lon = position.coords.longitude;
+
+                        fetch('/mark_attendance', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                latitude: lat,
+                                longitude: lon
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            alert(data.message); // Show a success message
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+                    });
+                } else {
+                    alert("Geolocation is not supported by this browser.");
+                }
+            });
+        </script>
+    </div>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a> | 
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+</body>
+</html>
