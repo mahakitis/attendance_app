@@ -1,0 +1,257 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f9fbff, #d7e9f7);
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar */
+nav {
+    background: linear-gradient(45deg, #4caf50, #56d586);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideIn 0.6s ease-out; /* Add animation */
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    color: #d4ffdc;
+    transform: scale(1.1);
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(45deg, #4caf50, #3e8e41);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(45deg, #3e8e41, #2d6b30);
+}
+
+/* Forms */
+form {
+    width: 100%;
+    max-width: 450px;
+    margin: 50px auto;
+    background: linear-gradient(145deg, #ffffff, #eef2f5);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15), -4px -4px 12px rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease-out; /* Add fade-in animation */
+}
+
+form h1 {
+    color: #4caf50;
+    margin-bottom: 20px;
+    font-size: 26px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form input, form select {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1), inset -3px -3px 6px rgba(255, 255, 255, 0.7);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+form button {
+    width: 100%;
+}
+
+/* Dashboard Pages */
+.dashboard-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 25px;
+    background: linear-gradient(145deg, #ffffff, #eef2f5);
+    border-radius: 20px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15), -4px -4px 12px rgba(255, 255, 255, 0.7);
+    animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
+}
+
+.dashboard-container h1 {
+    text-align: center;
+    color: #4caf50;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: linear-gradient(135deg, #ffffff, #eef2f5);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-container table th, 
+.dashboard-container table td {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.dashboard-container table th {
+    background: linear-gradient(45deg, #4caf50, #56d586);
+    color: white;
+}
+
+.dashboard-container table tr:hover {
+    background: rgba(76, 175, 80, 0.1);
+}
+
+/* Card Style for Sections */
+.card {
+    background: linear-gradient(135deg, #f9fbff, #f2f7fc);
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: scaleUp 0.8s ease-in-out; /* Add scale-up animation */
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+    color: #4caf50;
+}
+
+/* Decorative Shapes */
+.shape-circle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #4caf50, transparent);
+    border-radius: 50%;
+    top: 20%;
+    left: 10%;
+    z-index: -1;
+    animation: floatCircle 4s ease-in-out infinite; /* Floating circle animation */
+}
+
+.shape-square {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #3e8e41, transparent);
+    top: 80%;
+    left: 60%;
+    z-index: -1;
+    animation: floatSquare 4s ease-in-out infinite; /* Floating square animation */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes floatCircle {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatSquare {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+    }
+
+    .dashboard-container {
+        padding: 15px;
+    }
+}

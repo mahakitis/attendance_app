@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance App - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #f6f9fc, #e8f0f7);
+            color: #333;
+        }
+
+        nav {
+            background-color: #4caf50;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #d4ffdc;
+        }
+
+        /* Banner Section */
+        .banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(120deg, #4caf50, #45a049);
+            color: white;
+            padding: 50px;
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            animation: bannerAnimation 1.5s ease-out;
+        }
+
+        .banner-text {
+            max-width: 50%;
+        }
+
+        .banner-text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0 0 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .banner-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            animation: fadeIn 2s ease-out 0.5s;
+        }
+
+        .banner-image {
+            font-size: 50px;
+            text-align: center;
+            animation: scaleUp 1.5s ease-out;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 50px 20px;
+            text-align: center;
+            background: #f9fbff;
+        }
+
+        .features h2 {
+            font-size: 36px;
+            color: #4caf50;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-out 0.5s;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            color: #333;
+            margin: 0 0 10px;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .feature-card .illustration {
+            font-size: 40px;
+            margin-bottom: 15px;
+            animation: bounce 2s infinite;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            border-radius: 50px 50px 0 0;
+            animation: fadeIn 2s ease-out 1s;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleUp {
+            from {
+                transform: scale(0.8);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bannerAnimation {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </nav>
+
+    <!-- Banner Section -->
+    <div class="banner">
+        <div class="banner-text">
+            <h1>Welcome to Attendance App</h1>
+            <p>Track and manage student attendance effortlessly with our cutting-edge GPS technology.</p>
+        </div>
+        <div class="banner-image">
+            <span>📍</span> <!-- Placeholder for an illustration -->
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="illustration">📍</div> <!-- GPS illustration -->
+                <h3>GPS Tracking</h3>
+                <p>Ensure accurate attendance with precise location validation.</p>
+            </div>
+            <div class="feature-card">
+                <div class="illustration">☁️</div> <!-- Cloud illustration -->
+                <h3>Cloud Storage</h3>
+                <p>Securely store attendance data and access it anywhere.</p>
+            </div>
+            <div class="feature-card">
+                <div class="illustration">📊</div> <!-- Reports illustration -->
+                <h3>Detailed Reports</h3>
+                <p>Generate comprehensive attendance reports with ease.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Attendance App. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
